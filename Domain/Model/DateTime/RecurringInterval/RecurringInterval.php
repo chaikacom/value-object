@@ -6,7 +6,7 @@ use Iterator;
 use Zelenin\Ddd\Core\Domain\Exception\InvalidArgumentException;
 use Zelenin\Ddd\Core\Domain\Exception\NotMatchTypeException;
 use Zelenin\Ddd\Core\Domain\Model\DefaultValueObject;
-use Zelenin\Ddd\Core\Domain\Object\Object;
+use Zelenin\Ddd\Core\Domain\Object\ObjectInterface;
 use Zelenin\Ddd\ValueObject\Domain\Model\DateTime\Duration\Duration;
 use Zelenin\Ddd\ValueObject\Domain\Model\DateTime\Point\Calendar\CalendarDate;
 
@@ -177,7 +177,7 @@ final class RecurringInterval extends DefaultValueObject implements Iterator
      *
      * @return bool
      */
-    public function equalsTo(Object $object)
+    public function equalsTo(ObjectIntrface $object)
     {
         if (!$this->sameTypeAs($object)) {
             throw new NotMatchTypeException($this);
